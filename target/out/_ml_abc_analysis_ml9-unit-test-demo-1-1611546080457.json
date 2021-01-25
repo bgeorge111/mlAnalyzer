@@ -1,0 +1,114 @@
+{
+  "analysis" : {
+    "description" : "This lists the unique paths & attributes in matching documents(only leaf nodes).If configured, a random sample list of URIs matching the path and the collections wherethese URIs belong are provided.",
+    "paths" : [ {
+      "name" : "Events",
+      "schemata" : [ {
+        "name" : "Events-schema-1",
+        "id" : "37919def83572bdaa966eeea9124286a",
+        "popularity" : 7,
+        "definition" : {
+          "title" : "",
+          "type" : "object",
+          "properties" : [ "/envelope/instance/Event/unit", "/envelope/instance/Event/min", "/envelope/instance/Event/max", "/envelope/instance/Event/recordedAt", "/envelope/instance/Event/availableAt", "/envelope/instance/Event/type", "/envelope/instance/Event/deviceId", "/envelope/instance/Event/hash", "/envelope/instance/info/baseUri", "/envelope/instance/info/title", "/envelope/instance/info/version", "/envelope/attachments" ]
+        },
+        "example" : {
+          "uri" : "/iot/event6.json",
+          "schemaUri" : "/ml/abc/analysis/ml9-unit-test-demo-1-1611546082788_Events-schema-1.json"
+        }
+      } ]
+    }, {
+      "name" : "Event",
+      "schemata" : [ {
+        "name" : "Event-schema-1",
+        "id" : "37919def83572bdaa966eeea9124286a",
+        "popularity" : 32083,
+        "definition" : {
+          "title" : "",
+          "type" : "object",
+          "properties" : [ "/envelope/instance/Event/unit", "/envelope/instance/Event/min", "/envelope/instance/Event/max", "/envelope/instance/Event/recordedAt", "/envelope/instance/Event/availableAt", "/envelope/instance/Event/type", "/envelope/instance/Event/deviceId", "/envelope/instance/Event/hash", "/envelope/instance/info/baseUri", "/envelope/instance/info/title", "/envelope/instance/info/version", "/envelope/attachments" ]
+        },
+        "example" : {
+          "uri" : "/iot/input/00625e26-5bd7-4274-a40c-b11859e46db8.json",
+          "schemaUri" : "/ml/abc/analysis/ml9-unit-test-demo-1-1611546082788_Event-schema-1.json"
+        }
+      }, {
+        "name" : "Event-schema-2",
+        "id" : "570e8274ca81b8e5615ad577e170ad9b",
+        "popularity" : 24093,
+        "definition" : {
+          "title" : "",
+          "type" : "object",
+          "properties" : [ "/envelope/instance/Event/unit", "/envelope/instance/Event/min", "/envelope/instance/Event/max", "/envelope/instance/Event/recordedAt", "/envelope/instance/Event/availableAt", "/envelope/instance/Event/type", "/envelope/instance/Event/deviceId", "/envelope/instance/Event/hash", "/envelope/instance/info/baseUri", "/envelope/instance/info/title", "/envelope/instance/info/version", "/envelope/attachments/time", "/envelope/attachments/type", "/envelope/attachments/deviceId", "/envelope/attachments/value/unit", "/envelope/attachments/value/min", "/envelope/attachments/value/max", "/envelope/attachments/hash" ]
+        },
+        "example" : {
+          "uri" : "/iot/input/00df6170-dc62-4ba7-8fef-83afbe87f3aa.json",
+          "schemaUri" : "/ml/abc/analysis/ml9-unit-test-demo-1-1611546082788_Event-schema-2.json"
+        }
+      }, {
+        "name" : "Event-schema-3",
+        "id" : "646a4739c2f76f19a8cf25052c428c10",
+        "popularity" : 1,
+        "definition" : {
+          "title" : "",
+          "type" : "object",
+          "properties" : [ "/envelope/instance/Event/unit", "/envelope/instance/Event/min", "/envelope/instance/Event/max", "/envelope/instance/Event/recordedAt", "/envelope/instance/Event/availableAt", "/envelope/instance/Event/type", "/envelope/instance/Event/deviceId", "/envelope/instance/Event/hash", "/envelope/instance/Event/testAttr", "/envelope/instance/info/baseUri", "/envelope/instance/info/title", "/envelope/instance/info/version", "/envelope/attachments/time", "/envelope/attachments/type", "/envelope/attachments/deviceId", "/envelope/attachments/value/unit", "/envelope/attachments/value/min", "/envelope/attachments/value/max", "/envelope/attachments/hash" ]
+        },
+        "example" : {
+          "uri" : "/iot/input/102decf5-d033-40a9-909f-fa408a1cf911.json",
+          "schemaUri" : "/ml/abc/analysis/ml9-unit-test-demo-1-1611546082788_Event-schema-3.json"
+        }
+      } ]
+    }, {
+      "name" : "clinical-data",
+      "schemata" : [ {
+        "name" : "clinical-data-schema-1",
+        "id" : "b916ea89a5058eeb25ccf736e5d984fa",
+        "popularity" : 1,
+        "definition" : {
+          "title" : "",
+          "type" : "object",
+          "properties" : [ "/ODM/ClinicalData/SubjectData/SiteRef", "/ODM/ClinicalData/SubjectData/StudyEventData/FormData/AuditRecord/UserRef", "/ODM/ClinicalData/SubjectData/StudyEventData/FormData/AuditRecord/LocationRef", "/ODM/ClinicalData/SubjectData/StudyEventData/FormData/AuditRecord/DateTimeStamp", "/ODM/ClinicalData/SubjectData/StudyEventData/FormData/ItemGroupData/ItemData" ]
+        },
+        "example" : {
+          "uri" : "/clinical.xml",
+          "schemaUri" : "/ml/abc/analysis/ml9-unit-test-demo-1-1611546082788_clinical-data-schema-1.xsd"
+        }
+      } ]
+    }, {
+      "name" : "products",
+      "schemata" : [ {
+        "name" : "products-schema-1",
+        "id" : "6fc06e1eaeab8bd6237bb0b2fa034f3e",
+        "popularity" : 1,
+        "definition" : {
+          "title" : "",
+          "type" : "object",
+          "properties" : [ "/children(*)/children(*)/children(*)/name", "/children(*)/children(*)/children(*)/classificationId", "/children(*)/children(*)/children(*)/children(*)/name", "/children(*)/children(*)/children(*)/children(*)/classificationId", "/children(*)/children(*)/children(*)/children(*)/children(*)/name", "/children(*)/children(*)/children(*)/children(*)/children(*)/classificationId", "/children(*)/children(*)/name", "/children(*)/children(*)/classificationId", "/children(*)/name", "/children(*)/classificationId" ]
+        },
+        "example" : {
+          "uri" : "/products/classifications.json",
+          "schemaUri" : "/ml/abc/analysis/ml9-unit-test-demo-1-1611546082788_products-schema-1.json"
+        }
+      } ]
+    } ],
+    "attributes" : [ ],
+    "totalPaths" : 0,
+    "totalAttributes" : 0
+  },
+  "typeStats" : {
+    "description" : "This provides what are the kind of documents available in the database that being analysed.The query constraint is not used here. This is the document count information in the target database and collections.",
+    "xmlDocCount" : 1,
+    "jsonDocCount" : 56185,
+    "binDocCount" : 0,
+    "textDocCount" : 0,
+    "totalDocs" : 56186
+  },
+  "audit" : {
+    "description" : "This has audit information about when this analysis document was created, which databasewas analysed under which id and which query was used.",
+    "database" : "data-hub-FINAL",
+    "timestamp" : "2021-01-24 21:41:22.788-0600",
+    "runTime" : 0,
+    "query" : "{'ctsquery':{\"andQuery\":{\"queries\":[{\"trueQuery\":{}}]}}}"
+  }
+}

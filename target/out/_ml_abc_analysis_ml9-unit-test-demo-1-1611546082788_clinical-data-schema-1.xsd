@@ -1,0 +1,91 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.cdisc.org/ns/odm/v1.3" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ODM" type="v1:ODMType" xmlns:v1="http://www.cdisc.org/ns/odm/v1.3"/>
+  <xs:complexType name="SiteRefType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:short" name="LocationOID"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="UserRefType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="UserOID"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="LocationRefType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:short" name="LocationOID"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="AuditRecordType">
+    <xs:sequence>
+      <xs:element type="v1:UserRefType" name="UserRef" xmlns:v1="http://www.cdisc.org/ns/odm/v1.3"/>
+      <xs:element type="v1:LocationRefType" name="LocationRef" xmlns:v1="http://www.cdisc.org/ns/odm/v1.3"/>
+      <xs:element type="xs:dateTime" name="DateTimeStamp"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ItemDataType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="Value" use="optional"/>
+        <xs:attribute type="xs:string" name="ItemOID" use="optional"/>
+        <xs:attribute type="xs:string" name="IsNull" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="ItemGroupDataType">
+    <xs:sequence>
+      <xs:element type="v1:ItemDataType" name="ItemData" maxOccurs="unbounded" minOccurs="0" xmlns:v1="http://www.cdisc.org/ns/odm/v1.3"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="ItemGroupOID" use="optional"/>
+    <xs:attribute type="xs:string" name="ItemGroupRepeatKey" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="FormDataType">
+    <xs:sequence>
+      <xs:element type="v1:AuditRecordType" name="AuditRecord" xmlns:v1="http://www.cdisc.org/ns/odm/v1.3"/>
+      <xs:element type="v1:ItemGroupDataType" name="ItemGroupData" maxOccurs="unbounded" minOccurs="0" xmlns:v1="http://www.cdisc.org/ns/odm/v1.3"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="FormOID"/>
+    <xs:attribute type="xs:string" name="TransactionType"/>
+    <xs:attribute type="xs:integer" name="FormRepeatKey"/>
+  </xs:complexType>
+  <xs:complexType name="StudyEventDataType">
+    <xs:sequence>
+      <xs:element type="v1:FormDataType" name="FormData" xmlns:v1="http://www.cdisc.org/ns/odm/v1.3"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="TransactionType"/>
+    <xs:attribute type="xs:byte" name="StudyEventOID"/>
+  </xs:complexType>
+  <xs:complexType name="SubjectDataType">
+    <xs:sequence>
+      <xs:element type="v1:SiteRefType" name="SiteRef" xmlns:v1="http://www.cdisc.org/ns/odm/v1.3"/>
+      <xs:element type="v1:StudyEventDataType" name="StudyEventData" xmlns:v1="http://www.cdisc.org/ns/odm/v1.3"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="TransactionType"/>
+    <xs:attribute type="xs:string" name="SubjectKey"/>
+  </xs:complexType>
+  <xs:complexType name="ClinicalDataType">
+    <xs:sequence>
+      <xs:element type="v1:SubjectDataType" name="SubjectData" xmlns:v1="http://www.cdisc.org/ns/odm/v1.3"/>
+    </xs:sequence>
+    <xs:attribute type="xs:byte" name="MetaDataVersionOID"/>
+    <xs:attribute type="xs:string" name="StudyOID"/>
+  </xs:complexType>
+  <xs:complexType name="ODMType">
+    <xs:sequence>
+      <xs:element type="v1:ClinicalDataType" name="ClinicalData" xmlns:v1="http://www.cdisc.org/ns/odm/v1.3"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="Archival"/>
+    <xs:attribute type="xs:dateTime" name="CreationDateTime"/>
+    <xs:attribute type="xs:string" name="FileType"/>
+    <xs:attribute type="xs:short" name="Originator"/>
+    <xs:attribute type="xs:string" name="Granularity"/>
+    <xs:attribute type="xs:string" name="FileOID"/>
+    <xs:attribute type="xs:string" name="SourceSystem"/>
+    <xs:attribute type="xs:string" name="ODMVersion"/>
+  </xs:complexType>
+</xs:schema>
